@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+h1{
+    width: 100vw;
+    height: 10vh;
+    padding: 3px;
+    text-align: center;
+    border-style: solid;
+    align-items: center;
+    font-family: sans-serif;
+    color: blue;
+    margin: 0;
+}
+
+#cardapio{
+    position: absolute;
+    top: 11vh;
+}
