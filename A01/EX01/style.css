@@ -25,6 +25,8 @@ main{
 footer{
     height: 10vh;
 }
+
+
 .filmes{
     display: flex;
 }
