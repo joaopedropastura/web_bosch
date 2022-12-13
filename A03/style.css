@@ -27,32 +27,24 @@ footer{
     margin: 2vh;
     box-shadow: 3px 3px 10px grey;
     border-radius: 10px;
-
 }
-
 header nav{
     background-color: lightgreen;
     height: 3vh;
     border-radius: 10px;
-
 }
-
 article{
     flex-grow: 3;
     background-color: lightgray;
     margin-right: 2vh;
     padding: 2vw 2vw 0vw 2vw;
     border-radius: 10px;
-
-    
 }
-
 aside{
     background-color: lightpink;
     flex-grow: 1;
     padding: 2vw;
     border-radius: 10px;
-
 }
 section{
     background-color: lightgoldenrodyellow;
@@ -60,9 +52,7 @@ section{
     height: 33vh;
     box-shadow: 3px 3px 10px #808080;
     border-radius: 10px;
-
 }
-
 .section{
     position: relative;
     height: 97%;
@@ -76,6 +66,5 @@ figure{
     background-color: lightseagreen;
     box-shadow: 3px 3px 10px grey;
     border-radius: 10px;
-
 }
 
