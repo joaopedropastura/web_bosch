@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+header{
+    height: 10vh;
+}
+main{
+    height: 80vh;
+}
+footer{
+    height: 10vh;
+}
+
+h1{
+    text-align: center;
+}
+.navbar-nav{
+    display: flex;
+    width: 25vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.nav-item{
+    width: fit-content;
+}
+
+.card{
+    width: 30vw;
+    height: fit-content;
+}
+#caixas{
+    gap: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    position: relative;
+    padding-top: 6vh;
+}
+
+.card-footer{
+    height: fit-content;
+}
+
+img{
+    height: 300px;
+    width: fit-content;
+}
