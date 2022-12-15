@@ -1,0 +1,59 @@
+:root{
+    --body-bg: #fafafa;
+    --body-color: #555;
+
+}
+
+.dark-mode:root{
+    --body-bg: #212529;
+    --body-color: #899095;
+}
+
+body{
+    background-color: var(--body-bg); 
+    color: var(--body-color);  
+    margin: 0;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+}
+header{
+    height: 10vh;
+}
+main{
+    height: 80vh;
+}
+footer{
+    height: 10vh;
+}
+
+.topnav{
+    overflow: hidden;
+    background-color: #899095;
+    position: relative;
+}
+
+.navBar{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vw 2vw 0vw 2vw;
+    border-bottom: 2px solid #84a98c;
+}
+
+.menu{
+    display: block;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+  
+}
+
+.menu div{
+    width: 20px;
+    height: 2px;
+    background-color: #899095;
+    margin: 4px 0;
+
+}
