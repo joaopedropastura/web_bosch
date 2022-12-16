@@ -1,0 +1,70 @@
+#intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4vh;
+    height: 90vh;
+    padding: 1vw;
+}
+#intro-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#intro #intro-text-title{
+    font-size: x-large;
+}
+#sobre{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    padding: 1vw;
+}
+#sobre button{
+    border-radius: 8px;
+    border: none;
+    width: 70vw;
+    height: 5vh;
+    color: whitesmoke;
+    background: #2F3E46;
+    background: -webkit-linear-gradient(to right, #2F3E46, #84A98C);
+    background: linear-gradient(to right, #2F3E46, #84A98C);
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Audiowide', cursive;
+}
+@keyframes morph {
+    0% {
+              border-radius:  60% 45% 35% 70% / 60% 35% 70% 45%;
+              background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
+      } 
+      50% {
+              border-radius:  35% 60% 70% 45% / 55% 60% 35% 60%;
+              background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
+      }
+      100% {
+          border-radius:  60% 45% 35% 70% / 60% 35% 70% 45%;
+          background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
+      }  
+  }
+.BackgroundImgDisc {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9d9d9;
+
+    background: linear-gradient(45deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
+    animation: morph 15s ease-in-out infinite;
+    border-radius: 60% 45% 35% 70% / 60% 35% 70% 45%;
+    transition: all 10s ease-in-out;
+    z-index: 5;
+}
+.BackgroundImgDisc img{
+    border-radius: 50px;
+}

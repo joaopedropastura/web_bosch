@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="intro.css">
     <title>Portifolio</title>
 </head>
 <body>
@@ -14,7 +16,7 @@
                 <div></div><div></div><div></div>
                 <ul></ul>
             </label>
-            <span>Portifolio</span>
+            <h2>Portifolio</h2>
             <label for="switch">
                 <input type="checkbox" id="switch"></input>
             </label>
@@ -22,17 +24,36 @@
     </header>
     <main>
         <div id="intro">
-            <div>
-                <span>Olá, eu sou o João Pedro :)</span>
+            <div class="imgDisc">
+                <div id="disc" class="BackgroundImgDisc">
+                    <img src="img/eu.png" alt="" height="170px">
+                </div>
             </div>
-            <div>
-
-                <img src="" alt="">
+            <div id="intro-text">
+                <span id="intro-text-title">Olá, eu sou o João Pedro :)</span>
+                <span>Aprendiz de Analise e Desenvolvimento de Sistemas</span>
             </div>
             <div id="sobre">
-                <span></span>
+                <a href="#projetos"><button>projetos</button></a>
+                <a href=""><button>habilidades</button></a>
+                <a href=""><button>contato</button></a>
             </div>
         </div>
+        <div id="projetos">
+            <div class="project-box">
+                <button onclick="openDescription()">LIG4</button>
+                <img src="img/lig4.png" alt="">
+            </div>
+            <div class="project-box">
+
+            </div>
+
+            <div class="project-box">
+
+            </div>
+            <div id="descriptionProject"></div>
+        </div>
+
     </main>
     <footer></footer>
     <script src="script.js"></script>
