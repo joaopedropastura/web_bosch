@@ -4,9 +4,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: whitesmoke;
     align-items: center;
     padding: 0vw 2vw 0vw 2vw;
     border-bottom: 2px solid #84a98c;
+    margin-bottom: 10px;
 }
 .menu{
     display: block;

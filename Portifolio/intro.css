@@ -34,13 +34,14 @@
     background: -webkit-linear-gradient(to right, #2F3E46, #84A98C);
     background: linear-gradient(to right, #2F3E46, #84A98C);
     box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Audiowide', cursive;
+    font-family: 'DM Sans', sans-serif;
+    font-size: medium;
 }
 @keyframes morph {
     0% {
               border-radius:  60% 45% 35% 70% / 60% 35% 70% 45%;
               background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
-      } 
+      }
       50% {
               border-radius:  35% 60% 70% 45% / 55% 60% 35% 60%;
               background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
@@ -48,7 +49,7 @@
       100% {
           border-radius:  60% 45% 35% 70% / 60% 35% 70% 45%;
           background: linear-gradient(30deg, var(--primariaP1) 0%, var(--secudariaP1) 100%);
-      }  
+      }
   }
 .BackgroundImgDisc {
     width: 200px;
