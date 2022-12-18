@@ -33,7 +33,7 @@ footer{
 
 #projetos{
     padding-top: 10vh;
-    background-color: whitesmoke;
+    background-color: var(--body-bg);;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -42,6 +42,7 @@ footer{
 }
 
 .project-box{
+    position: relative;
     margin-bottom: 3vh;
     width: 80vw;
     height: 30vh;
@@ -62,6 +63,12 @@ footer{
     position: absolute;
 }
 
+.detailsLinks{
+    display: none;
+}
+.detailsLinks img{
+    height: 40px;
+}
 #descriptionProject{
     display: none;
     position: absolute;
