@@ -10,6 +10,7 @@ const oldBtn = document.getElementById('detailsButton');
 const getDetails = document.getElementsByClassName('detailsLinks')
 
 document.getElementById("detailsButton").addEventListener("click", openDescription)
+document.getElementById("detailsButton1").addEventListener("click", openDescription)
 
 function openDescription(){
     document.getElementById('thisBox').appendChild(btn).setAttribute("id", "closeDetails");
