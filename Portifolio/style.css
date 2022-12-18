@@ -1,5 +1,5 @@
 :root{
-    --body-bg: #fafafa;
+    --body-bg: whitesmoke;
     --body-color: #555;
     --primariaP1: #2F3E46;
 	--secudariaP1:#52796F;
@@ -31,12 +31,9 @@ footer{
     height: 10vh;
 }
 
-header + main{
-    margin-top: 10vh;
-}
-
 #projetos{
-    background-color: #2F3E46;
+    padding-top: 10vh;
+    background-color: whitesmoke;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -49,7 +46,7 @@ header + main{
     width: 80vw;
     height: 30vh;
     border-radius: 10px;
-    background-color: #CAD2C5;
+    background-color: #354F52;
     display: flex;
     justify-content: center;
     align-items: center;
