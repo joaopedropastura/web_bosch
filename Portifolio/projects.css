@@ -1,6 +1,6 @@
 #projetos{
     padding-top: 10vh;
-    background-color: var(--body-bg);;
+    background-color: var(--body-bg);
     height: auto;
     display: flex;
     flex-direction: column;
@@ -17,11 +17,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 3px 10px 5px #2F3E46;
 }
 .closeDetailsButton{
     display : none;
     top: 3%;
-    left: 90%;
+    left: 89%;
 }
 .project-box img{
     border-radius: 10px;
@@ -105,5 +106,5 @@
   border-radius: 10px;
 }
 .closeDetailsButton{
-    padding: 0.6em 0.6em;
+    padding: 0.5em 0.6em;
 }
