@@ -53,6 +53,12 @@ footer{
     align-items: center;
 }
 
+.closeDetailsButton{
+    display : none;
+    top: 2%;
+    left: 90%;
+}
+
 .project-box img{
     border-radius: 10px;
     height: 100%;

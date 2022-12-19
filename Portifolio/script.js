@@ -168,12 +168,13 @@ var x = document.getElementById("parent")
 
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function(){
-        document.querySelector('.thisBox').appendChild(btn).setAttribute("class", "closeDetails");
-        let newBtn = document.querySelector('.closeDetails');
+        // document.querySelector('.thisBox').appendChild(btn).setAttribute("class", "closeDetails");
+        // let newBtn = document.querySelector('.closeDetails');
+        console.log(document.getElementById(this.id).parentNode.id)
         let tam = document.getElementById(this.id).parentNode.id;
-        let img = document.querySelector(".imgBox");
-        tam.style.transition = "height 1s";
+        // let img = document.querySelector(".imgBox");
         tam.style.height = '70vh';
+        tam.style.transition = "height 1s";
         img.style.height = 'fit-content';
         tam.style.alignItems = "initial";
         newBtn.innerText = 'x';
@@ -183,29 +184,29 @@ for (let i = 0; i < btns.length; i++) {
         top: 2%;
         left: 90%;
     `;
-    console.log(document.getElementById(this.id).parentNode.id)
     newBtn.addEventListener("click", closeDescription);
+    linksDescription();
     })
 }
 
 function openDescription(){
     console.log('alo');
-    document.querySelector('.thisBox').appendChild(btn).setAttribute("class", "closeDetails");
-    let newBtn = document.querySelector('.closeDetails');
+    // document.querySelector('.thisBox').appendChild(btn).setAttribute("class", "closeDetails");
+    // let newBtn = document.querySelector('.closeDetails');
     let tam = document.querySelector(".thisBox");
     let img = document.querySelector(".imgBox");
     tam.style.transition = "height 1s";
     tam.style.height = '70vh';
     img.style.height = 'fit-content';
     tam.style.alignItems = "initial";
-    newBtn.innerText = 'x';
+    // newBtn.innerText = 'x';
     oldBtn.style.display = 'none';
-    newBtn.style.cssText = `
-        display : block;
-        top: 2%;
-        left: 90%;
-    `;
-    newBtn.addEventListener("click", closeDescription);
+    // newBtn.style.cssText = `
+    //     display : block;
+    //     top: 2%;
+    //     left: 90%;
+    // `;
+    // newBtn.addEventListener("click", closeDescription);
 
     linksDescription();
     // document.getElementById("descriptionProject").style.display = "block";
