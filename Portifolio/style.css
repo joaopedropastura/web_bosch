@@ -31,49 +31,6 @@ footer{
     height: 10vh;
 }
 
-#projetos{
+#habilidades{
     padding-top: 10vh;
-    background-color: var(--body-bg);;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.project-box{
-    position: relative;
-    margin-bottom: 3vh;
-    width: 80vw;
-    height: 30vh;
-    border-radius: 10px;
-    background-color: #354F52;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.closeDetailsButton{
-    display : none;
-    top: 2%;
-    left: 90%;
-}
-
-.project-box img{
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-}
-
-
-.project-box button{
-    position: absolute;
-}
-
-.detailsLinks{
-    display: none;
-    gap: 3vw;
-}
-.detailsLinks img{
-    height: 40px;
 }

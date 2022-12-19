@@ -1,0 +1,109 @@
+#projetos{
+    padding-top: 10vh;
+    background-color: var(--body-bg);;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.project-box{
+    position: relative;
+    margin-bottom: 3vh;
+    width: 80vw;
+    height: 30vh;
+    border-radius: 10px;
+    background-color: #354F52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.closeDetailsButton{
+    display : none;
+    top: 3%;
+    left: 90%;
+}
+.project-box img{
+    border-radius: 10px;
+    height: 30vh;
+    width: 100%;
+    /* filter: brightness(70%) */
+}
+.detailsLinks{
+    display: none;
+    gap: 15vw;
+}
+.imglink img{
+    height: 40px;
+}
+.project-box button{
+    position: absolute;
+}
+.detailsButton{
+    position: absolute;
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #2F3E46;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: 'DM Sans', sans-serif;
+}
+.detailsButton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #CAD2C5,
+    #84A98C,
+    #52796F,
+    #354F52,
+    #2F3E46,
+    #CAD2C5,
+    #2F3E46,
+    #84A98C,
+    #2F3E46
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-detailsButton 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+@keyframes glowing-detailsButton {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.detailsButton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2F3E46;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.closeDetailsButton{
+    padding: 0.6em 0.6em;
+}

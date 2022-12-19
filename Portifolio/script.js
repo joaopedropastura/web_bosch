@@ -168,34 +168,34 @@ var x = document.getElementById("parent")
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function(){
         console.log(document.getElementById(this.id).parentNode.childNodes)
-        let divNewBtn = document.getElementById(this.id).parentNode.childNodes[3].id
-        let divImg = document.getElementById(this.id).parentNode.childNodes[5].id
-        let divTam = document.getElementById(this.id).parentNode.id
         // let divOldButn = document.getElementById(this.id).parentNode.childNodes[1].id
         let details = document.getElementById(document.getElementById(this.id).parentNode.childNodes[7].id)
         let oldBtn = document.getElementById(document.getElementById(this.id).parentNode.childNodes[1].id)
         let newBtn = document.getElementById(document.getElementById(this.id).parentNode.childNodes[3].id)
         let tam = document.getElementById(document.getElementById(this.id).parentNode.id)
         let img = document.getElementById(document.getElementById(this.id).parentNode.childNodes[5].id)
-        tam.style.height = '70vh';
+
+        let tamImg = img.clientWidth
+        console.log(tamImg)
+        tam.style.height = '40vh';
         tam.style.transition = "height 1s";
-        img.style.height = 'fit-content';
+        img.style.height = '30vh';
         tam.style.alignItems = "initial";
         oldBtn.style.display = 'none';
         newBtn.style.display = 'block';
         details.style.cssText = `
             display: flex;
+            aling-itens: bottom;
             position: absolute;
-        `;
+            margin-top: 212px;
+            `;
         newBtn.addEventListener("click", function(){
             tam.style.transition = "height 1s";
             tam.style.height = '30vh';
             oldBtn.style.cssText = `
-                display : block;
-                left: 50%;
-                margin-left: -21.5px;
-                top: 50%;
-                margin-top: -44.91px;
+                display : block; 
+                margin-left: (-127.54/2)px;
+                margin-top: 89.54px;
             `;
             newBtn.style.display = 'none';
             img.style.height = '30vh';
