@@ -72,6 +72,7 @@ footer{
 
 .detailsLinks{
     display: none;
+    gap: 3vw;
 }
 .detailsLinks img{
     height: 40px;

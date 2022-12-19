@@ -152,7 +152,6 @@ $checkbox.addEventListener('change', function(){
 });
 
 const btn = document.createElement('button');
-const oldBtn = document.querySelector('.detailsButton');
 const getDetails = document.querySelector('.detailsLinks')
 
 
@@ -168,24 +167,40 @@ var x = document.getElementById("parent")
 
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function(){
-        // document.querySelector('.thisBox').appendChild(btn).setAttribute("class", "closeDetails");
-        // let newBtn = document.querySelector('.closeDetails');
-        console.log(document.getElementById(this.id).parentNode.id)
-        let tam = document.getElementById(this.id).parentNode.id;
-        // let img = document.querySelector(".imgBox");
+        console.log(document.getElementById(this.id).parentNode.childNodes)
+        let divNewBtn = document.getElementById(this.id).parentNode.childNodes[3].id
+        let divImg = document.getElementById(this.id).parentNode.childNodes[5].id
+        let divTam = document.getElementById(this.id).parentNode.id
+        // let divOldButn = document.getElementById(this.id).parentNode.childNodes[1].id
+        let details = document.getElementById(document.getElementById(this.id).parentNode.childNodes[7].id)
+        let oldBtn = document.getElementById(document.getElementById(this.id).parentNode.childNodes[1].id)
+        let newBtn = document.getElementById(document.getElementById(this.id).parentNode.childNodes[3].id)
+        let tam = document.getElementById(document.getElementById(this.id).parentNode.id)
+        let img = document.getElementById(document.getElementById(this.id).parentNode.childNodes[5].id)
         tam.style.height = '70vh';
         tam.style.transition = "height 1s";
         img.style.height = 'fit-content';
         tam.style.alignItems = "initial";
-        newBtn.innerText = 'x';
         oldBtn.style.display = 'none';
-        newBtn.style.cssText = `
-        display : block;
-        top: 2%;
-        left: 90%;
-    `;
-    newBtn.addEventListener("click", closeDescription);
-    linksDescription();
+        newBtn.style.display = 'block';
+        details.style.cssText = `
+            display: flex;
+            position: absolute;
+        `;
+        newBtn.addEventListener("click", function(){
+            tam.style.transition = "height 1s";
+            tam.style.height = '30vh';
+            oldBtn.style.cssText = `
+                display : block;
+                left: 50%;
+                margin-left: -21.5px;
+                top: 50%;
+                margin-top: -44.91px;
+            `;
+            newBtn.style.display = 'none';
+            img.style.height = '30vh';
+            details.style.display = 'none';
+        });
     })
 }
 
@@ -199,7 +214,6 @@ function openDescription(){
     tam.style.height = '70vh';
     img.style.height = 'fit-content';
     tam.style.alignItems = "initial";
-    // newBtn.innerText = 'x';
     oldBtn.style.display = 'none';
     // newBtn.style.cssText = `
     //     display : block;
