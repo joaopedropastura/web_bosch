@@ -3,7 +3,7 @@ function Carro(roda, motor, modelo){
     this.motor = motor
     Object.defineProperty(this, 'roda',
     {
-        enumerable : false,
+        enumerable : true,
         value : roda,
         writable : false,
     }
@@ -64,10 +64,26 @@ function camisa(preco, tamanho, cor){
 
 
 
-const carro1 = new Carro("aro 18", 3.8, "BMW M3")
+const carro1 = new Carro("aro 19", 3.8, "BMW M3")
 const boloCenoura =  new Bolo("bolo de cenoura","4 ovos", "3 xicaras", "2 cenouras")
 const flamengo = new camisa(299.99, 'GG', 'preta e vermelho')
 camisa.preco = 'lapis'
 console.log(flamengo)
 console.log(Object.values(carro1))
 console.log(Object.values(boloCenoura))
+
+const carro2 = Object.assign({cor: 'preto'}, carro1)
+
+console.log(carro2)
+
+
+console.log(Object.getOwnPropertyDescriptor(carro2, 'roda'))
+
+for (let [chave, valor] of Object.entries(carro2)){
+    console.log(chave,valor)
+}
+
+carro1.forEach(Element => {
+    console.log(Element);
+});
+console.log(Object.keys(carro1)[0] + ' ' + Object.values(carro1)[0]);
