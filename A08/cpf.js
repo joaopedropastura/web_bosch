@@ -26,7 +26,7 @@ function checkCpf(cpf){
         novoCpf[0] == element ? sum++ : null
     });
     result2 = 11 - (result2 % 11)
-    sum > 10 ? PrintResult(false) : result1 != novoCpf[9] || result2 != novoCpf[10] ? PrintResult(false) : PrintResult(true) 
+    sum > 10 ? PrintResult(false) : (result1 != novoCpf[9] || result2 != novoCpf[10] ? PrintResult(false) : PrintResult(true))
 }
 
 function isNumeric(value) {
