@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header{
+    height: 10vh;
+    display: flex;
+    padding: 1vw;
+    justify-content: space-between;
+}
+body{
+    height: 80vh;
+}
+footer{
+    height: 10vh;
+}
+
+#head-menu{
+    display: flex;
+    gap: 1rem;
+}

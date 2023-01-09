@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: whitesmoke;
+}
+header{
+    height: 10vh;
+    width: 100vw;
+}
+main{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+footer{
+    height: 10vh;
+    width: 100vw;
+
+}
+
+#dashBoard-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    gap: 2vh;
+    padding-top: 5vh;
+    align-items: center;
+    width: 10vw;
+    border-radius: 20px 0 0 20px;
+}
+
+#content{
+    display: flex;
+    position: relative;
+    width: 90vw;
+    background-color: rgb(123, 138, 123);
+    border-radius: 20px;
+}
+
+#tcr-value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputBoard{
+    position: absolute;
+}
