@@ -2,14 +2,16 @@
     margin: 0;
     font-family: sans-serif;
 }
-
+body{
+    height: 100vh;
+}
 header{
     height: 10vh;
     display: flex;
     padding: 1vw;
     justify-content: space-between;
 }
-body{
+main{
     height: 80vh;
 }
 footer{
@@ -19,4 +21,22 @@ footer{
 #head-menu{
     display: flex;
     gap: 1rem;
+}
+header h1{
+    font-size: large;
+}
+
+#flImage{
+    display: none;
+}
+
+#cad-aluno{
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: blue;
 }
