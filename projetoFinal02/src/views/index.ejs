@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/">Controle de estudantes</a>
+        <div id="head-menu">
+            <p>Cadastrar: </p>
+            <a href="alunos">Alunos</a>
+            <p>|</p>
+            <a href="sala">Sala</a>
+        </div>
+    </header>
+    <main>
+        <div id="sala-opt">
+            <select class="form-select menuInit" aria-label="Default select example">
+                <label class="form-label">Sala</label>
+                <option selected>selecione a sala</option>
+                <option value="1">TI</option>
+            </select>
+        </div>
+        <div id="cards">
+            <div class="card">
+                <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">name</h5>
+                    <p class="card-text">idade: YY</p>
+                    <!-- <a href="" class="btn btn-primary">Editar</a> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Editar
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cadastro2">
+                                    <input type="file" id="flImage" name="foto" accept="image/*">
+                                    <img id="userImg" src="img/avatar.png" alt="">
+                                    <div class="mb-3 forms">
+                                        <label class="form-label">Nome</label>
+                                        <input type="text" class="form-control" placeholder="nome">
+                                    </div>
+                                    <div class="mb-3 forms">
+                                        <label class="form-label">Idade</label>
+                                        <input type="text" class="form-control" placeholder="idade">
+                                    </div>
+                                    <div class="mb-3 forms">
+                                        <label class="form-label">Sexo</label>
+                                        <input type="text" class="form-control" placeholder="sexo">
+                                    </div>
+                                    <select class="form-select forms" aria-label="Default select example">
+                                        <label class="form-label">Sala</label>
+                                        <option selected>selecione a sala</option>
+                                        <option value="1">TI</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Salvar alterações</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+        </div>
+        
+        <!-- <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+        <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>
+        <div data-role="popup" id="popupBasic">
+        <p>This is a completely basic popup, no options set.</p>
+        </div> -->
+    </main>
+    <footer></footer>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+    <!-- <script
+        src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"
+        integrity="sha256-1PYCpx/EXA36KN1NKrK7auaTylVyk01D98R7Ccf04Bc="
+        crossorigin="anonymous">
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

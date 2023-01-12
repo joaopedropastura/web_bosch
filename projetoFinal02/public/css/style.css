@@ -62,17 +62,31 @@ header h1{
     box-shadow: 2px 2px 10px gray;
 }
 
-.cadPage{
+.modal-body{
+    /* position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 80vh;
+    height: 80vh; */
+}
+
+.cadPage{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
 }
 #userImg{
     border-radius: 20px;
     width: fit-content;
-    height: 150px;
+    height: 200px;
+}
+.modal-body{
+    display: flex;
+    padding: 0;
 }
 
 .forms{
@@ -87,9 +101,13 @@ header h1{
     height: 40vh;
 }
 
+#popupLogin{
+    display: none;
+}
+
 .cadastro{
     width: 40vw;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     gap: 1vh;
     flex-direction: column;
@@ -97,5 +115,16 @@ header h1{
     align-items: center;
     border-radius: 20px;
     box-shadow: 3px 3px 10px gray;
+
+}
+
+.cadastro2{
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
