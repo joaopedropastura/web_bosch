@@ -1,3 +1,6 @@
+
+
+const db = require('./src/config/db');
 const express = require('express');
 const routes = require('./routes');
 const app = express();

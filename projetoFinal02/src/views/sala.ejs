@@ -19,20 +19,22 @@
             <a href="sala">Sala</a>
         </div>
     </header>
-    <div class="cadPage">
-        <div class="cadastro" id="cad-sala">
-            <h2>Cadastrar uma nova sala</h2>
-            <div class="mb-3 forms">
-                <label class="form-label">Nome</label>
-                <input type="text" class="form-control" placeholder="nome">
+    <form method="post" action="/salas/">
+        <div class="cadPage">
+            <div class="cadastro" id="cad-sala">
+                <h2>Cadastrar uma nova sala</h2>
+                <div class="mb-3 forms">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome_sala" placeholder="nome">
+                </div>
+                <div class="mb-3 forms">
+                    <label class="form-label">Capacidade</label>
+                    <input type="text" class="form-control" name="capacidade_sala" placeholder="Capacidade">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
-            <div class="mb-3 forms">
-                <label class="form-label">Idade</label>
-                <input type="text" class="form-control" placeholder="idade">
-            </div>
-            
-            <button type="button" class="btn btn-primary">Cadastrar</button>
         </div>
-    </div>
+    </form>
 </body>
 </html>
