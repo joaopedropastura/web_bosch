@@ -23,6 +23,6 @@ file.addEventListener('change', () => {
 });
 
 
-$("#edit-btn").click(function(){
+// $("#edit-btn").click(function(){
     
-})
+// })

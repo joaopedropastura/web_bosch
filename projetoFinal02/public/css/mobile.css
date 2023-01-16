@@ -6,8 +6,8 @@
 	.menuInit{
 		width: -webkit-fill-available;
 	}
-	.headmenu{
-		gap: 0.2rem;
+	#head-menu{
+		gap: 0.4rem;
 	}
 	.cadastro2{
 		height: 70vh;

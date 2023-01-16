@@ -20,13 +20,17 @@
         </div>
     </header>
     <main>
-        <div id="sala-opt">
-            <select class="form-select menuInit" aria-label="Default select example">
-                <label class="form-label">Sala</label>
-                <option selected>selecione a sala</option>
-                <option value="1">TI</option>
-            </select>
-        </div>
+        <form action="/" method="post">
+            <div id="sala-opt">
+                <select class="form-select menuInit" aria-label="Default select example" onchange="this.form.submit()" name="nome">
+                    <label class="form-label">Sala</label>
+                    <option>Selecione uma sala</option>
+                    <% for (let i=0; i<salas.length; i++) { %>
+                        <option value='<%= salas[i].IDSala %>'> <%= salas[i].Nome %> </option>
+                    <% } %>
+                </select>
+            </div>
+        </form>
         <div id="cards">
             <div class="card">
                 <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">

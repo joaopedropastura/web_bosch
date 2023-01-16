@@ -12,6 +12,7 @@ route.get('/sala', home.PagSala);
 
 route.post('/alunos', cadastro.alunoInsert);
 route.post('/salas', cadastro.salaInsert);
+route.post('/', home.pagInicialPost);
 // route.get('/alunos', cadastro.sala);
 
 module.exports = route;

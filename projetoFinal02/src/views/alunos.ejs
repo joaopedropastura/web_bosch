@@ -21,31 +21,34 @@
         </div>
     </header>
 	<main>
-
 		<div class="cadPage">
-			<div class="cadastro">
-				<h2>Cadastrar um novo aluno</h2>
-				<input type="file" id="flImage" name="foto" accept="image/*">
-				<img id="userImg" src="img/avatar.png" alt="">
-				<div class="mb-3 forms">
-					<label class="form-label">Nome</label>
-					<input type="text" class="form-control" placeholder="nome">
+			<form action="/alunos" method="post">
+				<div class="cadastro">
+					<h2>Cadastrar um novo aluno</h2>
+					<input type="file" id="flImage" name="foto" accept="image/*">
+					<img id="userImg" src="img/avatar.png" alt="">
+					<div class="mb-3 forms">
+						<label class="form-label">Nome</label>
+						<input type="text" class="form-control" name="nome" placeholder="nome">
+					</div>
+					<div class="mb-3 forms">
+						<label class="form-label">Idade</label>
+						<input type="text" class="form-control" name="idade" placeholder="idade">
+					</div>
+					<div class="mb-3 forms">
+						<label class="form-label">Sexo</label>
+						<input type="text" class="form-control" name="sexo" placeholder="sexo">
+					</div>
+					<select class="form-select forms" id="sala" name="sala" aria-label="Default select example">
+						<label class="form-label">Sala</label>
+						<option selected>selecione a sala</option>
+						<% for (let i=0; i<salas.length; i++) { %>
+							<option value='<%= salas[i].IDSala %>' > <%= salas[i].Nome %> </option>
+						<% } %>
+					</select>
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
 				</div>
-				<div class="mb-3 forms">
-					<label class="form-label">Idade</label>
-					<input type="text" class="form-control" placeholder="idade">
-				</div>
-				<div class="mb-3 forms">
-					<label class="form-label">Sexo</label>
-					<input type="text" class="form-control" placeholder="sexo">
-				</div>
-				<select class="form-select forms" aria-label="Default select example">
-					<label class="form-label">Sala</label>
-					<option selected>selecione a sala</option>
-					<option value="1">TI</option>
-				</select>
-				<button type="button" class="btn btn-primary">Cadastrar</button>
-			</div>
+			</form>
 		</div>
 	</main>
 	<script src="js/script.js"></script>
