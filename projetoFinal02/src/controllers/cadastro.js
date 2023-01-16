@@ -7,8 +7,8 @@ module.exports = {
         res.render('../views/sala');
     },
     async salaInsert(req, res){
+        let dados = req.body;
         // Recebe as informações do front-end
-        const dados = req.body;
         // Criando sala no banco de dados
         await sala.create({
             Nome: dados.nome_sala,
@@ -25,5 +25,22 @@ module.exports = {
         });
         // Renderizando e passando o nome das salas para o front
         res.render('../views/cadastroAluno', {salas});
-    }
+    },
+
+    async alunoInsert(req, res){
+        // Recebendo as informações pelo Body
+        let dados = req.body;
+        // Nome padrão da foto
+        let foto = 'usuario.png';
+        // Criando aluno no banco de dados
+        await aluno.create({
+        Nome: dados.nome,
+        Idade: dados.idade,
+        Sexo: dados.sexo,
+        IDSala: dados.sala,
+        Foto: foto
+        });
+        // Redirecionar para a página principal
+        res.redirect('/');
+        }
 }

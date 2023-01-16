@@ -1,0 +1,67 @@
+@media (max-width: 450px)
+{
+	.card{
+		width: inherit;
+	}
+	.menuInit{
+		width: -webkit-fill-available;
+	}
+	.headmenu{
+		gap: 0.2rem;
+	}
+	.cadastro2{
+		height: 70vh;
+		width: 100%;
+	}
+	.cadastro{
+		width: 90vw;
+	}
+	.modal-body{
+		height: 70vh;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+	.modal-content{
+		top: 5vh;
+	}
+	#cad-sala{
+		height: 50vh;
+		width: 90vw;
+	}
+	#cards{
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 451px)
+{
+	.card{
+		width: 45vw;
+	}
+	.menuInit{
+		width: inherit;
+	}
+	.cadastro2{
+		height: 70vh;
+		width: 100%;
+	}
+	.modal-content{
+		top: 5vh;
+	}
+	.cadastro{
+		width: 60vw;
+    	height: 80vh;
+	}
+
+}
+
+@media (min-width: 1111px)
+{
+	.card{
+		width: 18vw;
+	}
+	.modal-content{
+		top: 5vh;
+	}
+}

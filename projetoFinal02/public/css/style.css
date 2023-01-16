@@ -1,7 +1,6 @@
 *{
     margin: 0;
     font-family: sans-serif;
-    
 }
 body{
     height: 100vh;
@@ -13,7 +12,7 @@ header{
     align-items: center;
     justify-content: space-between;
     border-bottom: solid rgb(238, 238, 238);
-    
+
 }
 header a{
     text-decoration: none;
@@ -53,7 +52,11 @@ header h1{
 
 #cards{
     padding: 1vw 2vw;
-    height: 70vh;
+    /* height: 70vh; */
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .card{
     width: 18vw;
@@ -101,9 +104,9 @@ header h1{
     height: 40vh;
 }
 
-#popupLogin{
+/* #popupLogin{
     display: none;
-}
+} */
 
 .cadastro{
     width: 40vw;
@@ -126,5 +129,4 @@ header h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }

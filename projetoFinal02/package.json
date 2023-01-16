@@ -1,10 +1,10 @@
 {
   "name": "projetofinal02",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,6 @@
     "mssql": "^9.0.1",
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0"
-  }
+  },
+  "description": ""
 }
