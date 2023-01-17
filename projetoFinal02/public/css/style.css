@@ -49,6 +49,9 @@ header h1{
     width: 15%;
     height: 40%;
 }
+.edt-aluno-sala{
+    width: 80%;
+}
 
 #cards{
     padding: 1vw 2vw;
@@ -65,13 +68,10 @@ header h1{
     box-shadow: 2px 2px 10px gray;
 }
 
-.modal-body{
-    /* position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 80vh; */
+.card-img-top2{
+    height: 200px;
+    width: fit-content;
+    border-radius: 20px;
 }
 
 .cadPage{
@@ -103,11 +103,6 @@ header h1{
 #cad-sala{
     height: 40vh;
 }
-
-/* #popupLogin{
-    display: none;
-} */
-
 .cadastro{
     width: 40vw;
     height: 80vh;
@@ -118,9 +113,7 @@ header h1{
     align-items: center;
     border-radius: 20px;
     box-shadow: 3px 3px 10px gray;
-
 }
-
 .cadastro2{
     width: 50vw;
     height: 60vh;

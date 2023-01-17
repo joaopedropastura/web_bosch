@@ -22,6 +22,11 @@ module.exports = {
         const dados = req.body;
         // Nome padrão da foto
         let foto = 'usuario.png';
+
+        if (req.file) {
+            // Pegar novo nome da foto
+            foto = req.file.filename;
+        }
         // Criando aluno no banco de dados
         await aluno.create({
             Nome: dados.nome,

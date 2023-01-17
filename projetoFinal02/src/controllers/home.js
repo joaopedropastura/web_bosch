@@ -7,7 +7,8 @@ module.exports = {
             raw: true,
             attributes: ['IDSala', 'Nome']
         });
-        res.render('../views/index', {salas});
+        res.render('../views/index', {salas, alunos: '', id: ''});
+        // res.render('../views/index', {salas});
     },
     async pagInicialPost(req, res){
         const id = req.body.nome;
@@ -20,7 +21,16 @@ module.exports = {
             raw: true, 
             attributes: ['IDSala', 'Nome'] 
         });
+        
+        if(id == 'invalido')
+        {
+            res.render('../views/index', {salas, alunos : '', id : ''});
+            return;
+        }
+        
         res.render('../views/index', {salas, alunos : alunos, id : id});
+        
+
     },
     // async pagAlunos(req, res){
     //     res.render('../views/alunos')

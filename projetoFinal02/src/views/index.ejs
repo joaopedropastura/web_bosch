@@ -22,228 +22,78 @@
     <main>
         <form action="/" method="post">
             <div id="sala-opt">
-                <select class="form-select menuInit" aria-label="Default select example" onchange="this.form.submit()" name="nome">
+                <select class="form-select menuInit" aria-label="Default select example" id="sala" onchange="this.form.submit()" name="nome">
                     <label class="form-label">Sala</label>
-                    <option>Selecione uma sala</option>
+                    <option value="invalido">Selecione uma sala</option>
                     <% for (let i=0; i<salas.length; i++) { %>
-                        <option value='<%= salas[i].IDSala %>'> <%= salas[i].Nome %> </option>
+                        <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>>
+                            <%= salas[i].Nome %> </option>
                     <% } %>
                 </select>
             </div>
         </form>
-        <div id="cards">
-            <div class="card">
-                <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">name</h5>
-                    <p class="card-text">idade: YY</p>
-                    <!-- <a href="" class="btn btn-primary">Editar</a> -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Editar
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="cadastro2">
-                                    <input type="file" id="flImage" name="foto" accept="image/*">
-                                    <img id="userImg" src="img/avatar.png" alt="">
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" placeholder="nome">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div id="cards">
+                <% for (let i=0; i<alunos.length; i++) { %>
+                    <div class="card">
+                        <img src="img/<%= alunos[i].Foto %>" class="card-img-top" alt="Foto aluno">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= alunos[i].Nome %></h5>
+                            <p class="card-text">Idade: <%= alunos[i].Idade %></p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Editar
+                            </button>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Idade</label>
-                                        <input type="text" class="form-control" placeholder="idade">
+                                    <div class="modal-body">
+                                        <div class="cadastro2">
+                                            <input type="file" id="flImage" name="foto" accept="image/*">
+                                            <img src="img/<%= alunos[4].Foto %>" class="card-img-top2" alt="Foto aluno">
+                                            <div class="mb-3 forms">
+                                                <label class="form-label">Nome</label> 
+                                                <input type="text" class="form-control" placeholder="nome" value="<%= alunos[4].Nome %>">
+                                            </div>
+                                            <div class="mb-3 forms">
+                                                <label class="form-label">Idade</label>
+                                                <input type="text" class="form-control" placeholder="idade">
+                                            </div>
+                                            <div class="mb-3 forms">
+                                                <label class="form-label">Sexo</label>
+                                                <input type="text" class="form-control" placeholder="sexo">
+                                            </div>
+                                            <select class="form-select edt-aluno-sala" aria-label="Default select example" id="sala" onchange="this.form.submit()" name="nome">
+                                                <label class="form-label">Sala</label>
+                                                <option>Selecione uma sala</option>
+                                                <% for (let i=0; i<salas.length; i++) { %>
+                                                    <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>>
+                                                        <%= salas[i].Nome %> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Sexo</label>
-                                        <input type="text" class="form-control" placeholder="sexo">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
                                     </div>
-                                    <select class="form-select forms" aria-label="Default select example">
-                                        <label class="form-label">Sala</label>
-                                        <option selected>selecione a sala</option>
-                                        <option value="1">TI</option>
-                                    </select>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar alterações</button>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                </div>
+                <% } %>
             </div>
-            <div class="card">
-                <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">name</h5>
-                    <p class="card-text">idade: YY</p>
-                    <!-- <a href="" class="btn btn-primary">Editar</a> -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Editar
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="cadastro2">
-                                    <input type="file" id="flImage" name="foto" accept="image/*">
-                                    <img id="userImg" src="img/avatar.png" alt="">
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" placeholder="nome">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Idade</label>
-                                        <input type="text" class="form-control" placeholder="idade">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Sexo</label>
-                                        <input type="text" class="form-control" placeholder="sexo">
-                                    </div>
-                                    <select class="form-select forms" aria-label="Default select example">
-                                        <label class="form-label">Sala</label>
-                                        <option selected>selecione a sala</option>
-                                        <option value="1">TI</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar alterações</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">name</h5>
-                    <p class="card-text">idade: YY</p>
-                    <!-- <a href="" class="btn btn-primary">Editar</a> -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Editar
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="cadastro2">
-                                    <input type="file" id="flImage" name="foto" accept="image/*">
-                                    <img id="userImg" src="img/avatar.png" alt="">
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" placeholder="nome">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Idade</label>
-                                        <input type="text" class="form-control" placeholder="idade">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Sexo</label>
-                                        <input type="text" class="form-control" placeholder="sexo">
-                                    </div>
-                                    <select class="form-select forms" aria-label="Default select example">
-                                        <label class="form-label">Sala</label>
-                                        <option selected>selecione a sala</option>
-                                        <option value="1">TI</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar alterações</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/avatar.png" id="userImg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">name</h5>
-                    <p class="card-text">idade: YY</p>
-                    <!-- <a href="" class="btn btn-primary">Editar</a> -->
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Editar
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="cadastro2">
-                                    <input type="file" id="flImage" name="foto" accept="image/*">
-                                    <img id="userImg" src="img/avatar.png" alt="">
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Nome</label>
-                                        <input type="text" class="form-control" placeholder="nome">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Idade</label>
-                                        <input type="text" class="form-control" placeholder="idade">
-                                    </div>
-                                    <div class="mb-3 forms">
-                                        <label class="form-label">Sexo</label>
-                                        <input type="text" class="form-control" placeholder="sexo">
-                                    </div>
-                                    <select class="form-select forms" aria-label="Default select example">
-                                        <label class="form-label">Sala</label>
-                                        <option selected>selecione a sala</option>
-                                        <option value="1">TI</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar alterações</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
-        <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>
-        <div data-role="popup" id="popupBasic">
-        <p>This is a completely basic popup, no options set.</p>
-        </div> -->
+        </form>
+            
+            <!-- <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+                <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>
+                <div data-role="popup" id="popupBasic">
+                    <p>This is a completely basic popup, no options set.</p>
+                </div> -->
     </main>
     <footer></footer>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
