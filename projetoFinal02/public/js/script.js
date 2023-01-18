@@ -1,9 +1,7 @@
 const photo = document.getElementById('userImg');
 const file = document.getElementById('flImage');
-
 photo.addEventListener('click', () => {
     file.click();
-    console.log("OI")
 });
 
 file.addEventListener('change', () => {
@@ -21,8 +19,3 @@ file.addEventListener('change', () => {
         photo.src = reader.result
     }
 });
-
-
-// $("#edit-btn").click(function(){
-    
-// })

@@ -30,6 +30,9 @@
 		width: 90vw;
 	}
 	#cards{
+		padding: 4vw;
+		gap: 2vh;
+		flex-wrap: nowrap;
 		flex-direction: column;
 	}
 }

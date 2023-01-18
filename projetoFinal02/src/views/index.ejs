@@ -27,8 +27,8 @@
                     <option value="invalido">Selecione uma sala</option>
                     <% for (let i=0; i<salas.length; i++) { %>
                         <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>>
-                            <%= salas[i].Nome %> </option>
-                    <% } %>
+                        <%= salas[i].Nome %> </option><% 
+                    } %>
                 </select>
             </div>
         </form>
@@ -48,37 +48,39 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Editar informações</h5>
+                                        <h5 class="modal-title" id="edt-btn">Editar informações</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="cadastro2">
                                             <input type="file" id="flImage" name="foto" accept="image/*">
-                                            <img src="img/<%= alunos[4].Foto %>" class="card-img-top2" alt="Foto aluno">
+                                            <img src="img/<%= alunos[i].Foto %>" class="card-img-top2" alt="Foto aluno">
                                             <div class="mb-3 forms">
+                                                <label class="form-label"><%= alunos[i].IDAluno %></label> 
                                                 <label class="form-label">Nome</label> 
-                                                <input type="text" class="form-control" placeholder="nome" value="<%= alunos[4].Nome %>">
+                                                <input type="text" class="form-control" placeholder="nome" value="<%= alunos[i].Nome %>">
                                             </div>
                                             <div class="mb-3 forms">
                                                 <label class="form-label">Idade</label>
-                                                <input type="text" class="form-control" placeholder="idade">
+                                                <input type="text" class="form-control" placeholder="idade" value="<%= alunos[i].Idade %>">
                                             </div>
                                             <div class="mb-3 forms">
                                                 <label class="form-label">Sexo</label>
-                                                <input type="text" class="form-control" placeholder="sexo">
+                                                <input type="text" class="form-control" placeholder="sexo" value="<%= alunos[i].Sexo %>">
                                             </div>
-                                            <select class="form-select edt-aluno-sala" aria-label="Default select example" id="sala" onchange="this.form.submit()" name="nome">
+                                            <select class="form-select edt-aluno-sala" aria-label="Default select example" id="sala" name="nome">
                                                 <label class="form-label">Sala</label>
                                                 <option>Selecione uma sala</option>
-                                                <% for (let i=0; i<salas.length; i++) { %>
-                                                    <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>>
-                                                        <%= salas[i].Nome %> </option>
+                                                <% for (let j=0; j<salas.length; j++) { %>
+                                                    <option value='<%= salas[j].IDSala %>' <%= id == salas[j].IDSala ? 'selected' : ''%>>
+                                                        <%= salas[j].Nome %> </option>
                                                 <% } %>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-danger">Apagar</button>
                                         <button type="submit" class="btn btn-primary">Salvar alterações</button>
                                     </div>
                                 </div>
@@ -102,7 +104,9 @@
         integrity="sha256-1PYCpx/EXA36KN1NKrK7auaTylVyk01D98R7Ccf04Bc="
         crossorigin="anonymous">
     </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/popUp.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

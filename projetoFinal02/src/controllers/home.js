@@ -14,7 +14,7 @@ module.exports = {
         const id = req.body.nome;
         const alunos = await aluno.findAll({
             raw: true,
-            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto'],
+            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto', 'Sexo'],
             where: { IDSala: id }
         });
         const salas = await sala.findAll({ 
