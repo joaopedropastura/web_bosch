@@ -1,5 +1,8 @@
 const photo = document.getElementById('userImg');
 const file = document.getElementById('flImage');
+
+
+
 photo.addEventListener('click', () => {
     file.click();
 });
@@ -19,3 +22,5 @@ file.addEventListener('change', () => {
         photo.src = reader.result
     }
 });
+
+

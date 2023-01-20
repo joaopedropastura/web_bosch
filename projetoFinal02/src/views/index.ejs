@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
                 <select class="form-select menuInit" aria-label="Default select example" id="sala" onchange="this.form.submit()" name="nome">
                     <label class="form-label">Sala</label>
                     <option value="invalido">Selecione uma sala</option>
-                    <% for (let i=0; i<salas.length; i++) { %>
+                    <% for (let i=0; i < salas.length; i++) { %>
                         <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>>
                         <%= salas[i].Nome %> </option><% 
                     } %>
@@ -40,56 +41,57 @@
                         <div class="card-body">
                             <h5 class="card-title"><%= alunos[i].Nome %></h5>
                             <p class="card-text">Idade: <%= alunos[i].Idade %></p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" id="<%= alunos[i].IDAluno %>" onclick="passainfo(this.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Editar
                             </button>
                         </div>
+        </form>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="edt-btn">Editar informações</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="cadastro2">
-                                            <input type="file" id="flImage" name="foto" accept="image/*">
-                                            <img src="img/<%= alunos[i].Foto %>" class="card-img-top2" alt="Foto aluno">
-                                            <div class="mb-3 forms">
-                                                <label class="form-label"><%= alunos[i].IDAluno %></label> 
-                                                <label class="form-label">Nome</label> 
-                                                <input type="text" class="form-control" placeholder="nome" value="<%= alunos[i].Nome %>">
-                                            </div>
-                                            <div class="mb-3 forms">
-                                                <label class="form-label">Idade</label>
-                                                <input type="text" class="form-control" placeholder="idade" value="<%= alunos[i].Idade %>">
-                                            </div>
-                                            <div class="mb-3 forms">
-                                                <label class="form-label">Sexo</label>
-                                                <input type="text" class="form-control" placeholder="sexo" value="<%= alunos[i].Sexo %>">
-                                            </div>
-                                            <select class="form-select edt-aluno-sala" aria-label="Default select example" id="sala" name="nome">
-                                                <label class="form-label">Sala</label>
-                                                <option>Selecione uma sala</option>
-                                                <% for (let j=0; j<salas.length; j++) { %>
-                                                    <option value='<%= salas[j].IDSala %>' <%= id == salas[j].IDSala ? 'selected' : ''%>>
-                                                        <%= salas[j].Nome %> </option>
-                                                <% } %>
-                                            </select>
+                                    <form action="" id="formEdit" method="post" enctype="multipart/form-data">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" >Editar informações</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                        <button type="button" class="btn btn-danger">Apagar</button>
-                                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
-                                    </div>
+                                        <div class="modal-body" id="modal-body">
+                                            <div class="cadastro2" id="<%= alunos[i].IDAluno %>modal">
+                                                <input type="file" id="flImage input-edt<%=i%>" class="editarImg" name="foto" accept="image/*">
+                                                <img src="img/<%= alunos[i].Foto %>" id="img-edt<%=i%>" class="card-img-top2 pedroPaulo" alt="Foto aluno">
+                                                <div class="mb-3 forms">
+                                                    <label class="form-label"> <div id = "teste"></div>Nome</label> 
+                                                    <input type="text" class="form-control" placeholder="nome" name="nome" value="<%= alunos[i].Nome %>">
+                                                </div>
+                                                <div class="mb-3 forms">
+                                                    <label class="form-label">Idade</label>
+                                                    <input type="text" class="form-control" placeholder="idade" name="idade" value="<%= alunos[i].Idade %>">
+                                                </div>
+                                                <div class="mb-3 forms">
+                                                    <label class="form-label">Sexo</label>
+                                                    <input type="text" class="form-control" placeholder="sexo" name="sexo" value="<%= alunos[i].Sexo %>">
+                                                </div>
+                                                <select class="form-select edt-aluno-sala" aria-label="Default select example" id="sala" name="sala">
+                                                    <label class="form-label">Sala</label>
+                                                    <option>Selecione uma sala</option>
+                                                    <% for (let j=0; j<salas.length; j++) { %>
+                                                        <option value='<%= salas[j].IDSala %>' <%= id == salas[j].IDSala ? 'selected' : ''%>>
+                                                            <%= salas[j].Nome %> </option>
+                                                    <% } %>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                            <button type="button" onclick="" class="btn btn-danger">Apagar</button>
+                                            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <% } %>
             </div>
-        </form>
             
             <!-- <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
                 <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Basic Popup</a>
@@ -104,9 +106,9 @@
         integrity="sha256-1PYCpx/EXA36KN1NKrK7auaTylVyk01D98R7Ccf04Bc="
         crossorigin="anonymous">
     </script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="js/popUp.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/popUp.js"></script>
 </body>
 </html>

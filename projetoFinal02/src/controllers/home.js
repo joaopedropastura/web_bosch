@@ -12,21 +12,22 @@ module.exports = {
     },
     async pagInicialPost(req, res){
         const id = req.body.nome;
-        const alunos = await aluno.findAll({
-            raw: true,
-            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto', 'Sexo'],
-            where: { IDSala: id }
-        });
+        
         const salas = await sala.findAll({ 
             raw: true, 
             attributes: ['IDSala', 'Nome'] 
         });
-        
         if(id == 'invalido')
         {
             res.render('../views/index', {salas, alunos : '', id : ''});
             return;
         }
+
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto', 'Sexo'],
+            where: { IDSala: id }
+        });
         
         res.render('../views/index', {salas, alunos : alunos, id : id});
         

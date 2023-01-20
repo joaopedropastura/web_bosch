@@ -37,22 +37,5 @@ module.exports = {
         });
         // Redirecionar para a página principal
         res.redirect('/');
-    },
-
-    async adicionar(req, res){
-        const dados = req.body;
-        const id = req.params.id;
-        // Dando upgrade nas novas informações
-        await aluno.update({
-            Nome: dados.nome,
-            Idade: dados.idade,
-            Sexo: dados.sexo,
-            IDSala: dados.sala
-        },
-        
-        {
-            where: { IDAluno: id }
-        });
-        res.redirect('/');
-        }
+    }
 }

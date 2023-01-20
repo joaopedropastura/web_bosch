@@ -31,6 +31,10 @@ footer{
     align-items: center ;
 }
 
+.editarImg{
+    display: none;
+}
+
 #head-menu p{
     margin: 0;
 }
@@ -69,7 +73,7 @@ header h1{
 }
 
 .modal-footer{
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .card-img-top2{
